@@ -13,5 +13,5 @@ Please read the README.DOCX file for a detailed explanation.
 * Data Binding / Validation
 * Command Binding / Relay Commands
 * Templates/Styles/Brushes with template binding
-* Dependency / Attached Properties
+* Dependency / Attached Properties & Implementation of INotifyPropertyChanged
 * MVVM Pattern
