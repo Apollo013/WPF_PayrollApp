@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	                xmlns:WpfToolkit="http://schemas.microsoft.com/wpf/2008/toolkit">
+
+    <Style x:Key="DataGridCellStyle" TargetType="{x:Type WpfToolkit:DataGridCell}">
+        <Setter Property="TextBlock.VerticalAlignment" Value="Stretch"/>
+        <Setter Property="TextBlock.Padding" Value="10,20,0,0"/>
+        <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+        <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{StaticResource ItemBackgroundBrush_IsSelected}" />
+                <Setter Property="BorderBrush" Value="{x:Null}" />
+                <Setter Property="Foreground" Value="Black"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontSize" Value="12"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,24 @@
+﻿<Application x:Class="Application"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             ShutdownMode="OnExplicitShutdown">
+
+    <!--Essentially, These Are XAML 'CSS' Files-->
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/XAML/Brushes/DataGridBrushes.xaml"/>
+                <ResourceDictionary Source="/XAML/Brushes/GenericBrushes.xaml"/>
+                <ResourceDictionary Source="/XAML/Buttons/GlassButtonStyle.xaml"/>
+                <ResourceDictionary Source="/XAML/Buttons/GlassButtonSmallStyle.xaml"/>
+                <ResourceDictionary Source="/XAML/Buttons/UpdateButtonsStyle.xaml"/>
+                <ResourceDictionary Source="/XAML/TextStyles/TextBlockStyles.xaml"/>
+                <ResourceDictionary Source="/XAML/TextStyles/PayProHeaderStyles.xaml"/>
+                <ResourceDictionary Source="/XAML/TextStyles/TextBoxStyles.xaml"/>
+                <ResourceDictionary Source="/XAML/Styles/BorderStyles.xaml"/>
+                <ResourceDictionary Source="/XAML/Styles/DividerStyles.xaml"/>
+                <ResourceDictionary Source="/XAML/Styles/ImageStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+   </Application.Resources>
+</Application>

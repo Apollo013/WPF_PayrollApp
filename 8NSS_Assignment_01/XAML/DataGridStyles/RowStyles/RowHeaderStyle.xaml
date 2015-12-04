@@ -1,0 +1,73 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	                xmlns:WpfToolkit="http://schemas.microsoft.com/wpf/2008/toolkit"
+                    xmlns:Primitives="clr-namespace:Microsoft.Windows.Controls.Primitives;assembly=WPFToolkit">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/XAML/Brushes/DataGridBrushes.xaml"/>
+        <ResourceDictionary Source="/XAML/DataGridStyles/RowStyles/RowGripperStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!-- Value converters -->
+    <BooleanToVisibilityConverter x:Key="bool2VisibilityConverter" />
+
+    <!-- DataGridRowHeader Style -->
+    <Style x:Key="{x:Type WpfToolkit:DataGridRowHeader}"
+		   TargetType="{x:Type WpfToolkit:DataGridRowHeader}">
+        <Setter Property="Background" Value="{StaticResource HeaderBackgroundBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource HeaderBorderBrush}" />
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type WpfToolkit:DataGridRowHeader}">
+                    <Grid>
+                        <WpfToolkit:DataGridHeaderBorder x:Name="headerBorder"
+							                             IsSelected="{TemplateBinding IsRowSelected}"
+							                             IsHovered ="{TemplateBinding IsMouseOver}"
+							                             IsPressed="{TemplateBinding IsPressed}"
+							                             Background="{TemplateBinding Background}"
+							                             BorderBrush="{TemplateBinding BorderBrush}"
+							                             BorderThickness="1,0,1,1"
+							                             Padding ="{TemplateBinding Padding}"
+							                             Orientation="Horizontal"
+							                             SeparatorVisibility="{TemplateBinding SeparatorVisibility}"
+							                             SeparatorBrush="{TemplateBinding SeparatorBrush}">
+                            <Border BorderBrush="{StaticResource HeaderInnerBorderBrush}"
+									BorderThickness="0,1,0,0">
+                                <StackPanel Orientation="Horizontal" >
+                                    <ContentPresenter
+										SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+										VerticalAlignment="Center"/>
+                                    <Control
+										SnapsToDevicePixels="false"
+										Visibility="{Binding RelativeSource={RelativeSource AncestorType={x:Type WpfToolkit:DataGridRow}}, Path=(Validation.HasError), Converter={StaticResource bool2VisibilityConverter}}"
+										Template="{Binding RelativeSource={RelativeSource AncestorType={x:Type WpfToolkit:DataGridRow}}, Path=ValidationErrorTemplate}" 
+                                        VerticalContentAlignment="Center"
+                                        TextOptions.TextFormattingMode="Display"
+                                        TextOptions.TextRenderingMode="ClearType"/>
+                                </StackPanel>
+                            </Border>
+                        </WpfToolkit:DataGridHeaderBorder>
+
+                        <Thumb x:Name="PART_TopHeaderGripper"
+							   VerticalAlignment="Top"
+							   Style="{StaticResource RowHeaderGripperStyle}"/>
+                        <Thumb x:Name="PART_BottomHeaderGripper"
+							   VerticalAlignment="Bottom"
+							   Style="{StaticResource RowHeaderGripperStyle}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="headerBorder" Property="Background" Value="{StaticResource HeaderHighlightedBackgoundBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="headerBorder" Property="Background" Value="{StaticResource HeaderPressedBackgroundBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

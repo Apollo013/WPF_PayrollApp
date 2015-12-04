@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Used By /Styles/BorderStyles.xaml-->
+    <SolidColorBrush x:Key="Brush_BorderBrush" Color="#FF625858"/>
+
+    <!--Used By /Styles/DividerStyles.xaml-->
+    <SolidColorBrush x:Key="DarkDividerBrush" Color="#FF342201"/>
+    <SolidColorBrush x:Key="BrightDividerBrush" Color="White"/>
+
+    <!--Brushes Colours Used For Header, Footer and Window Backgrounds-->
+    <LinearGradientBrush x:Key="Brush_HeaderBarBackground" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF0A1B24" Offset="0" />
+        <GradientStop Color="#FF6091B7" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="Brush_FooterBarBackground" EndPoint="0.5,0" StartPoint="0.5,1">
+        <GradientStop Color="#FF6091B7" Offset="1" />
+        <GradientStop Color="#FF0A1B24" Offset="0" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="DetailFormBackground" Color="#f1f0f0"/>
+
+    <!--Brush Colours For When A List Item's - 'IsSelected' Event.-->
+    <LinearGradientBrush x:Key="ItemBackgroundBrush_IsSelected" EndPoint="0.5,0" StartPoint="0.5,1">
+        <GradientStop Color="#3987BBE5" Offset="1" />
+        <GradientStop Color="#FF87BBE5" Offset="0" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="ItemBorderBrush_IsSelected" Color="#FF155B95"/>
+
+
+    <!--Brush Colours For When The Mouse Is Hovering Over A List Item - 'IsMouseOver' Event-->
+    <LinearGradientBrush x:Key="ItemBackgroundBrush_IsMouseOver" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#03C8DEE5" Offset="0" />
+        <GradientStop Color="#7B78ABDE" Offset="1" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="ItemBorderBrush_IsMouseOver" Color="Silver"/>
+
+</ResourceDictionary>

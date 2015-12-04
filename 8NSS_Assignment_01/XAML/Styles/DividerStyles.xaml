@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <!--<ResourceDictionary Source="/XAML/Brushes/DataGridBrushes.xaml"/>-->
+        <ResourceDictionary Source="/XAML/Brushes/GenericBrushes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--Used By Detail Forms To Divide The Center / Input Part Of the Form From The Header And The Footer-->
+    
+    <Style x:Key="FooterDividerDark" TargetType="{x:Type Rectangle}">
+        <Setter Property="Grid.Row" Value="2"/>
+        <Setter Property="Grid.ColumnSpan" Value="2"/>
+        <Setter Property="Height" Value="0.5"/>
+        <Setter Property="Margin" Value="0,0.2,0,0"/>
+        <Setter Property="Fill" Value="{StaticResource DarkDividerBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+
+    <Style x:Key="FooterDividerBright" TargetType="{x:Type Rectangle}" BasedOn="{StaticResource FooterDividerDark}">
+        <Setter Property="Height" Value="0.8"/>
+        <Setter Property="Margin" Value="0,0.7,0,0"/>
+        <Setter Property="Fill" Value="{StaticResource BrightDividerBrush}"/>
+    </Style>
+
+    <Style x:Key="HeaderDividerDark" TargetType="{x:Type Rectangle}">
+        <Setter Property="Grid.ColumnSpan" Value="2"/>
+        <Setter Property="Height" Value="0.5"/>
+        <Setter Property="Margin" Value="0,0,0,1"/>
+        <Setter Property="Fill" Value="{StaticResource DarkDividerBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+    </Style>
+
+    <Style x:Key="HeaderDividerBright" TargetType="{x:Type Rectangle}" BasedOn="{StaticResource HeaderDividerDark}">
+        <Setter Property="Height" Value="0.8"/>
+        <Setter Property="Margin" Value="0,0,0,0.2"/>
+        <Setter Property="Fill" Value="{StaticResource BrightDividerBrush}"/>
+    </Style>
+
+    <!--Used By The Button Dividers On the Payroll View-->
+    <Style x:Key="LeftButtonDivider" TargetType="{x:Type Rectangle}">
+        <Setter Property="Fill" Value="Silver"/>
+        <Setter Property="Width" Value="0.8"/>
+        <Setter Property="Margin" Value="4,22,0,20"/>
+    </Style>
+
+    <Style x:Key="RightButtonDivider" TargetType="{x:Type Rectangle}">
+        <Setter Property="Fill" Value="#FFE2E217"/>
+        <Setter Property="Width" Value="1"/>
+        <Setter Property="Margin" Value="-0.8,26.5,4,24.5"/>
+    </Style>
+
+</ResourceDictionary>

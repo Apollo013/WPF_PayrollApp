@@ -1,0 +1,13 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--Used by Detail Forms , I.E. Login, Settings And Paypackt Update Views-->
+    
+    <Style x:Key="HeaderImageStyle" TargetType="Image">
+        <Setter Property="Margin" Value="14,17,0,17"/>
+        <Setter Property="Stretch" Value="Fill"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Width" Value="60"/>
+    </Style>
+
+</ResourceDictionary>

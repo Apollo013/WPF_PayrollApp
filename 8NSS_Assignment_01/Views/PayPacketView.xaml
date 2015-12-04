@@ -1,0 +1,248 @@
+﻿<Window x:Class="PayPacketView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pay Packet" 
+        Height="430" 
+        Width="540"
+        Background="{x:Null}" 
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize" 
+        FocusManager.FocusedElement="{Binding ElementName=tbxEmployeeName}" 
+        Icon="/8NSS_Assignment_01;component/Images/Safe-payment.ico">
+    
+    <Border Name="WindowBorder" 
+            Style="{StaticResource BorderStyle}" >
+
+        <Grid>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240" />
+                <ColumnDefinition Width="300" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="94" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="118*" />
+                <RowDefinition Height="44" />
+            </Grid.RowDefinitions>
+
+            <Image Name="Image1" 
+                   Style="{StaticResource HeaderImageStyle}"
+                   Source="/Images/Files/MyFileOpen.png" />
+
+            <TextBlock Name="tbkTitle" 
+                       Grid.Column="1" 
+                       Style="{StaticResource PayProTitleLargeDark}"/>
+            <TextBlock Name="SmallTitle"
+                       Grid.Column="1" 
+                       Text="Payroll Detail" 
+                       Style="{StaticResource PayProTitleSmallDark}" />
+
+            <Rectangle Name="HeaderDivider1"
+                       Style="{StaticResource HeaderDividerDark}"/>
+            <Rectangle Name="HeaderDivider2"
+                       Style="{StaticResource HeaderDividerBright}"/>
+
+            <Rectangle Name="CenterBackground" 
+                       Fill="WhiteSmoke" 
+                       Grid.Row="1" 
+                       Grid.ColumnSpan="2"
+                       Grid.RowSpan="2"/>
+            
+            <StackPanel Name="TextPanel" 
+                        Grid.Column="1" 
+                        Grid.Row="1"
+                        Margin="10,26,0,0" >
+                <TextBox Name="tbxEmployeeName" 
+                         Width="200"
+                         Style="{StaticResource Style_ErrorInTextTooltip}" >
+                    <TextBox.Text>
+                        <Binding Path="payPacket.Name"
+                                 ValidatesOnDataErrors="True"
+                                 ValidatesOnExceptions="True"
+                                 UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <DataErrorValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+                <TextBox Name="tbxRate" 
+                         Style="{StaticResource Style_ErrorInTextTooltip}" >
+                    <TextBox.Text>
+                        <Binding Path="payPacket.Rate"
+                                 StringFormat="{}{0:N}"
+                                 ValidatesOnDataErrors="True"
+                                 ValidatesOnExceptions="True"
+                                 UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <DataErrorValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+                <TextBox Name="tbxHours" 
+                         Style="{StaticResource Style_ErrorInTextTooltip}" >
+                    <TextBox.Text>
+                        <Binding Path="payPacket.Hours"
+                                 StringFormat="{}{0:F2}"
+                                 ValidatesOnDataErrors="True"
+                                 ValidatesOnExceptions="True"
+                                 UpdateSourceTrigger="PropertyChanged">
+                            <Binding.ValidationRules>
+                                <DataErrorValidationRule />
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+            </StackPanel>
+            
+            <StackPanel Name="LabeslPanel"
+                        Grid.Row="1" 
+                        Margin="30,26,2,0">
+                <TextBlock Text="Employee Name:"
+                           Style="{StaticResource LabelTextBlock}"/>
+                <TextBlock Text="Rate:"
+                           Style="{StaticResource LabelTextBlock}"/>
+                <TextBlock Text="Hours:"
+                           Style="{StaticResource LabelTextBlock}"/>
+            </StackPanel>
+
+            <Rectangle Name="MiddleDivider1"
+                       Style="{StaticResource HeaderDividerDark}"
+                       Grid.Row="1"/>
+            <Rectangle Name="MiddleDivider2"
+                       Style="{StaticResource HeaderDividerBright}"
+                       Grid.Row="1"/>
+            
+            <Rectangle Name="SummaryBackground" 
+                       Fill="White" 
+                       Grid.Row="2" 
+                       Grid.ColumnSpan="2"/>
+            
+            <WrapPanel Name="SummaryPanel" 
+                       Grid.ColumnSpan="2" 
+                       Grid.Row="2"  
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <TextBlock Text="Basic" 
+                               Style="{StaticResource ContainerItemData}" 
+                               Margin="6,0" />
+                </Border>
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <TextBlock Name="tbkBasicHourandRate"
+                               Style="{StaticResource ContainerItemData}"
+                               Margin="6,0">
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0:N} Hours @ {1:c}">
+                                <Binding Path="payPacket.BasicHours" />
+                                <Binding Path="payPacket.Rate"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Border>
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <TextBlock Name="tbkBasicEarning"
+                               Style="{StaticResource ContainerItemData}"
+                               Text="{Binding Path=payPacket.BasicEarnings, StringFormat={}{0:c}}"
+                               Margin="0,0,6,0"  
+                               HorizontalAlignment="Right"/>
+                </Border>
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <TextBlock Text="Time And Half" 
+                               Style="{StaticResource ContainerItemData}" 
+                               Margin="6,0"/>
+                </Border>
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <TextBlock Name="tbkTimeAndHalfHourandRate"
+                               Style="{StaticResource ContainerItemData}"
+                               Margin="6,0" >
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0:N} Hours @ {1:C}">
+                                <Binding Path="payPacket.TimeAndHalfHours" />
+                                <Binding Path="payPacket.TimeAndHalfRate"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Border>
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <TextBlock Name="tbkTimeAndHalfEarning"
+                               Style="{StaticResource ContainerItemData}"
+                               Text="{Binding Path=payPacket.TimeAndHalfEarnings, StringFormat={}{0:c}}"
+                               Margin="0,0,6,0"  
+                               HorizontalAlignment="Right"/>
+                </Border>
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <TextBlock Text="Double Time" 
+                               Style="{StaticResource ContainerItemData}" 
+                               Margin="6,0"/>
+                </Border>
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <TextBlock Name="tbkDoubleHourandRate"
+                               Style="{StaticResource ContainerItemData}"
+                               Margin="6,0" >
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0:N} Hours @ {1:c}">
+                                <Binding Path="payPacket.DoubleTimeHours" />
+                                <Binding Path="payPacket.DoubleRate"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </Border>
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <TextBlock Name="tbkDoubleEarning"
+                               Style="{StaticResource ContainerItemData}"
+                               Text="{Binding Path=payPacket.DoubleTimeEarnings, StringFormat={}{0:c}}"
+                               Margin="0,0,6,0" 
+                               HorizontalAlignment="Right"/>
+                </Border>
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <TextBlock Text="Total" 
+                               Style="{StaticResource ContainerItemData}" 
+                               Margin="6,0"/>
+                </Border>
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <!--Intentionally blank-->
+                </Border>
+                <Border Style="{StaticResource SummaryBorderStyle}">
+                    <TextBlock Name="tbkTotalEarning"
+                               Style="{StaticResource ContainerItemData}"
+                               Text="{Binding Path=payPacket.TotalEarnings, StringFormat={}{0:c}}"
+                               Margin="0,0,6,0"  
+                               HorizontalAlignment="Right"/>
+                </Border>
+            </WrapPanel>
+
+            <Rectangle Name="FooterDivider1"
+                       Grid.Row="3"
+                       Style="{StaticResource FooterDividerDark}"/>
+            <Rectangle Name="FooterDivider2"
+                       Grid.Row="3"
+                       Style="{StaticResource FooterDividerBright}"/>
+
+            <StackPanel Name="ButtonsStackPanel"
+                        Grid.Column="1" 
+                        Grid.Row="3" 
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"                    
+                        Margin="0,0,10,0" >
+
+                <Button Name="btnSave" 
+                        Content="Save" 
+                        Style="{StaticResource UpdateButtonStyle}"
+                        Command="{Binding SaveCommand}" IsDefault="True" />
+                <Button Name="btnCancel" 
+                        Content="Cancel" 
+                        Style="{StaticResource UpdateButtonStyle}"
+                        Command="{Binding CloseCommand}"/>
+            </StackPanel>
+            
+        </Grid>
+            
+    </Border>
+    
+</Window>

@@ -1,0 +1,17 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Displays An Image Beside A Textbox When Invalid Information Has Been Entered-->
+    <ControlTemplate x:Key="InputValidationError">
+        <DockPanel HorizontalAlignment="Left" >
+            <StackPanel Margin="0,0,10,0" Width="20" Height="20">
+                <Image Source="/Images/System/Error.png" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+            </StackPanel>
+            <AdornedElementPlaceholder/>
+        </DockPanel>
+    </ControlTemplate>
+
+</ResourceDictionary>

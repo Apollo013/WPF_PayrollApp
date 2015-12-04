@@ -1,0 +1,121 @@
+﻿<Window x:Class="LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:h="clr-namespace:Helpers.Login"
+        Title="Login" 
+        Height="340" 
+        Width="540" 
+        Background="{x:Null}" 
+        WindowStyle="None"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize" 
+        FocusManager.FocusedElement="{Binding ElementName=tbxUserName}" 
+        Icon="/8NSS_Assignment_01;component/Images/Safe-payment.ico">
+    
+    <Border Name="WindowBorder" 
+            Style="{StaticResource BorderStyle}">
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="210" />
+                <ColumnDefinition Width="330" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="94" />
+                <RowDefinition Height="188" />
+                <RowDefinition Height="30*" />
+            </Grid.RowDefinitions>
+
+            <Image Name="Image1"  
+                   Style="{StaticResource HeaderImageStyle}"
+                   Source="/Images/System/Login.png" />
+            
+            <TextBlock Name="tbkTitle" 
+                       Grid.Column="1" 
+                       Style="{StaticResource PayProTitleLargeDark}" />            
+            <TextBlock Name="SmallTitle"
+                       Grid.Column="1" 
+                       Text="Payroll Login" 
+                       Style="{StaticResource PayProTitleSmallDark}" />
+
+            <Rectangle Name="HeaderDivider1"
+                       Style="{StaticResource HeaderDividerDark}"/>
+            <Rectangle Name="HeaderDivider2"
+                       Style="{StaticResource HeaderDividerBright}"/>
+            
+            <Rectangle Name="CenterBackground" 
+                       Fill="White" 
+                       Grid.Row="1" 
+                       Grid.ColumnSpan="2" />
+            
+            <StackPanel Name="TextPanel" 
+                        Grid.Column="1" 
+                        Grid.Row="1"
+                        Margin="10,10,30,0">
+                
+                <TextBox Name="tbxUserName" 
+                         Width="240"
+                         Style="{StaticResource TextBoxStyle}"                     
+                         Text="{Binding Path=LoginCredentials.Input_UserName}">
+                </TextBox>
+
+                <PasswordBox x:Name="pbxPassword"
+                             HorizontalAlignment="Left"
+                             Margin="4,4,0,4"
+                             Height="26"
+                             Width="240" 
+                             h:PasswordHelper.Attach="True" 
+                             h:PasswordHelper.Password="{Binding Text, ElementName=plain, Mode=TwoWay}">
+                </PasswordBox>
+                <TextBlock x:Name="plain"
+                           Height ="0" 
+                           Visibility="Hidden"
+                           Text="{Binding Path=LoginCredentials.Input_Password, NotifyOnSourceUpdated=True, Mode=OneWayToSource}"/>
+                
+            </StackPanel>
+            <StackPanel Name="LabeslPanel"
+                        Grid.Row="1" 
+                        Margin="50,10,2,0">
+
+                <TextBlock Text="User Name:"
+                           Style="{StaticResource LabelTextBlock}"/>
+                <TextBlock Text="Password:"
+                           Style="{StaticResource LabelTextBlock}"/>
+
+            </StackPanel>
+
+            <Rectangle Name="FooterDivider1"
+                       Grid.Row="3"
+                       Style="{StaticResource FooterDividerDark}"/>
+            <Rectangle Name="FooterDivider2"
+                       Grid.Row="3"
+                       Style="{StaticResource FooterDividerBright}"/>
+            
+            <StackPanel Name="ButtonsStackPanel"
+                        Grid.Row="2"
+                        Grid.ColumnSpan="2"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Right"                    
+                        Margin="0,0,20,0">
+
+                <Button Name="btnLogin" 
+                        Content="Login" 
+                        Style="{StaticResource UpdateButtonStyle}" 
+                        Command="{Binding Path=LoginCommand}" 
+                        IsDefault="True" />
+                
+                <Button Name="btnCancel" 
+                        Content="Cancel" 
+                        Style="{StaticResource UpdateButtonStyle}"
+                        Command="{Binding Path=CancelCommand}"/>
+                
+            </StackPanel>
+
+        </Grid>
+        
+    </Border>
+
+</Window>

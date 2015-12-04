@@ -1,0 +1,897 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+8NSS_Assignment_01
+</name>
+</assembly>
+<members>
+<member name="M:SettingsView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:SettingsView">
+	<summary>
+SettingsView
+</summary>
+</member><member name="M:Window1.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:Window1">
+	<summary>
+Window1
+</summary>
+</member><member name="M:PayPacketView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:PayPacketView">
+	<summary>
+PayPacketView
+</summary>
+</member><member name="M:LoginView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:LoginView">
+	<summary>
+LoginView
+</summary>
+</member><member name="M:PayrollView.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="T:PayrollView">
+	<summary>
+PayrollView
+</summary>
+</member><member name="M:Application.InitializeComponent">
+	<summary>
+InitializeComponent
+</summary>
+</member><member name="M:Application.Main">
+	<summary>
+Application Entry Point.
+</summary>
+</member><member name="T:Application">
+	<summary>
+Application
+</summary>
+</member><member name="P:Models.PayTotalModel.TotalsTitle">
+	<summary>
+ Title For Each Total Type, Basic, Double Time, Etc ...
+ </summary>
+</member><member name="P:Models.PayTotalModel.Hours">
+	<summary>
+ Total Hours For Each Total Type.
+ </summary>
+</member><member name="P:Models.PayTotalModel.Earnings">
+	<summary>
+ Total Earnings For Each Total Type.
+ </summary>
+</member><member name="M:ViewModels.Base.UINotificationBase.ReportPropertyChanged(System.String)">
+	<summary>
+ Raises This Objects PropertyChanged Event.
+ </summary>
+	<param name="propertyname">The Name Of The Property Whose Value Has Changed.</param>
+</member><member name="E:ViewModels.Base.UINotificationBase.PropertyChanged">
+	<summary>
+ Raised When A Property On This Object Has A New Value.
+ </summary>
+</member><member name="M:ViewModels.Base.UINotificationBase.VerifyPropertyName(System.String)">
+	<summary>
+ Warns The Developer If This Object Does Not Have A Public Property With The Specified Name.
+ This Method Does Not Exist In A Release Build.
+ </summary>
+</member><member name="F:ViewModels.Base.UINotificationBase._ThrowOnInvalidPropertyName">
+	<summary>
+ Returns Whether An Exception Is Thrown, or If A DEBUG.Fail() Is Used
+ When An Invalid Property Name Is Passed To The VerifyPropertyName Method.
+ The Default Value Is FALSE, But Sub-Classes Can Override This.
+ </summary>
+</member><member name="P:Models.SettingsModel.MinimumWage">
+	<summary>
+ Gets / Sets The Minumum Wage.
+ </summary>
+	<value>A Double Value Specifying The Minimum Wage.</value>
+	<returns>A Double Value Containing The Minimum Wage.</returns>
+</member><member name="P:Models.SettingsModel.MaximumWage">
+	<summary>
+ Gets / Sets The Maximum Wage.
+ </summary>
+	<value>A Double Value Specifying The Maximum Wage.</value>
+	<returns>A Double Value Containing The Maximum Wage.</returns>
+</member><member name="P:Models.SettingsModel.FlatWeekCeiling">
+	<summary>
+ Gets / Sets The Maximum Ceiling Value For The Hours Worked During A Flat Week.
+ </summary>
+	<value>An Integer Value Specifying The Maximum Hours Worked During A Flat Week.</value>
+	<returns>An Integer Value Containing The Maximum Hours Worked During A Flat Week.</returns>
+</member><member name="P:Models.SettingsModel.TimeAndHalfCeiling">
+	<summary>
+ Gets / Sets The Maximum Ceiling Value For The Hours Worked For Time And A Half.
+ </summary>
+	<value>An Integer Value Specifying The Maximum Hours Worked For Time And A Half.</value>
+	<returns>An Integer Value Containing The Maximum Hours Worked For Time And A Half.</returns>
+</member><member name="P:Models.SettingsModel.DoubleTimeCeiling">
+	<summary>
+ Gets / Sets The Maximum Ceiling Value For The Hours Worked For Double Time.
+ </summary>
+	<value>An Integer Value Specifying The Maximum Hours Worked For Double Time.</value>
+	<returns>An Integer Value Containing The Maximum Hours Worked For Double Time.</returns>
+</member><member name="M:Models.SettingsModel.#ctor">
+	<summary>
+ Initialise Our Validation Object, Properties And Make A Backup.
+ </summary>
+</member><member name="M:Models.SettingsModel.Read">
+	<summary>
+ Initialises Setting Properties.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Models.SettingsModel.Save">
+	<summary>
+ Save Our Settings And Do Some House Keeping. 
+ </summary>
+</member><member name="M:Models.SettingsModel.UpdateUI">
+	<summary>
+ Notifies The UI That Changes Have Been Made To one Or More Properties That May Affect Other Properties.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Models.SettingsModel.SettingsBackup">
+	<summary>
+ Structure Used To Make A Copy Of Wage Settings.
+ </summary>
+	<remarks>This Will Allow The End User To Cancel Or Restore An Update (When Using A Form).</remarks>
+</member><member name="F:Models.SettingsModel.Backup">
+	<summary>
+ Create A New Instance Of The Backup Structure.
+ </summary>
+</member><member name="M:Models.SettingsModel.BackupClear">
+	<summary>
+ Clear The Contents Of The Backup Structure.
+ </summary>
+</member><member name="M:Models.SettingsModel.BackupData">
+	<summary>
+ Make A Copy Of Our Wage Settings.
+ </summary>
+</member><member name="M:Models.SettingsModel.BackupRestore">
+	<summary>
+ Restore Previous Settings.
+ </summary>
+</member><member name="P:ViewModels.LoginViewModel.LoginCredentials">
+	<summary>
+ Property Used For Binding Our Login Model Data To The View (and vice versa).
+ </summary>
+</member><member name="P:ViewModels.LoginViewModel.LoginCommand">
+	<summary>
+ Property That Provides Command Binding For The View's 'Login' Button Control.
+ </summary>
+</member><member name="M:ViewModels.LoginViewModel.LoginExecute">
+	<summary>
+ Attempts Login, Checks First That The Login Object Is Authentic.
+ </summary>
+	<remarks>Execution Logic For Attempting A Login.</remarks>
+</member><member name="P:ViewModels.LoginViewModel.CancelCommand">
+	<summary>
+ Property That Provides Command Binding For The View's 'Close' or 'Cancel' Button Control.
+ </summary>
+</member><member name="P:DataAccessLayer.TextFileAccess.CurrentFileName">
+	<summary>
+ The Name Of The Currently Opened Text File Or the File To Open.
+ </summary>
+</member><member name="P:DataAccessLayer.TextFileAccess.FileContent">
+	<summary>
+ Strongly Typed Object That Contains Each Line Of The Text File.
+ </summary>
+</member><member name="P:DataAccessLayer.TextFileAccess.DialogTitle">
+	<summary>
+ The Title To Be Displayed On The OpenFileDialog Window
+ </summary>
+</member><member name="P:DataAccessLayer.TextFileAccess.DialogFilter">
+	<summary>
+ The Options For Which File Types To Display In The OpenFileDialog Window
+ </summary>
+</member><member name="P:DataAccessLayer.TextFileAccess.DefaultExtension">
+	<summary>
+ The Default File Extension
+ </summary>
+</member><member name="M:DataAccessLayer.TextFileAccess.#ctor(System.String,System.String,System.String)">
+	<summary>
+ Initialises The Class But Does Not Read The Text File.
+ </summary>
+	<param name="pDialogTitle">The Title To Be Displayed On The OpenFileDialog Window</param>
+	<param name="pDefaultExt">The Default File Extension</param>
+	<param name="pDialogFilter">The Options For Which File Types To Display In The OpenFileDialog Window</param>
+	<remarks></remarks>
+</member><member name="M:DataAccessLayer.TextFileAccess.FileExists">
+	<summary>
+ Indicates If The File Actually Exists.
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:DataAccessLayer.TextFileAccess.WithinBounds(System.Int32)">
+	<summary>
+ Checks That We Are Not Going To Try To OverWrite Lines That Are There.
+ </summary>
+	<param name="range">The High End Count Value To Compare.</param>
+	<returns>True If Ok, Fasle Otherwise.</returns>
+</member><member name="M:DataAccessLayer.TextFileAccess.CreateFile">
+	<summary>
+ Creates A New Text File.
+ </summary>
+</member><member name="M:DataAccessLayer.TextFileAccess.OpenFile">
+	<summary>
+ Calls The OpenFileDialog And Initiates Reading.
+ </summary>
+	<returns>True If The Operation Was Successful or False If Not.</returns>
+</member><member name="M:DataAccessLayer.TextFileAccess.DeleteFile">
+	<summary>
+ Permanently Deletes A File.
+ </summary>
+</member><member name="M:DataAccessLayer.TextFileAccess.Read">
+	<summary>
+ Reads All Lines From A Text File Into A Strongly Typed List(Of String)
+ </summary>
+	<returns>True If Successful, False Otherwise</returns>
+	<remarks></remarks>
+</member><member name="M:DataAccessLayer.TextFileAccess.Append(System.String[])">
+	<summary>
+ Appends A Line or Lines To The End Of The Text File.
+ </summary>
+</member><member name="M:DataAccessLayer.TextFileAccess.Change(System.Int32,System.String[])">
+	<summary>
+ Changes The Line Or Lines In A Text File For A Given 'Zero Based' Ordinal Position.
+ </summary>
+	<param name="index">Integer Representing The 'Zero Based' Ordinal Position From Which To Start Writing.</param>
+	<param name="Lines">String Array Containing The Lines In Which To Write To The File</param>
+	<returns>True If Operation Was Successful, False Otherwise.</returns>
+	<remarks></remarks>
+</member><member name="M:DataAccessLayer.TextFileAccess.Remove(System.Int32)">
+	<summary>
+ Removes A Single Specific Line From The Text File According To A 'Zero Based' Index Ordinal Arguement.
+ </summary>
+	<param name="Index">The 'Zero Based' Ordinal Position Of The Line To Remove.</param>
+	<returns>True If Successful, Otherwise False.</returns>
+	<remarks></remarks>
+</member><member name="M:DataAccessLayer.TextFileAccess.Remove(System.Int32,System.Int32)">
+	<summary>
+ Removes A Range Of Lines From The Text File According To A 'Zero Based' Index Ordinal Arguement.
+ </summary>
+	<param name="startIndex">The 'Zero Based' Ordinal Position Of Where To Start Removing Lines From.</param>
+	<param name="count">The Number Of Lines To Remove Including Index Position.</param>
+	<returns>True If Successful, Otherwise False.</returns>
+	<remarks>The Line Corresponding To The 'startIndex' Is Also Removed.</remarks>
+</member><member name="M:DataAccessLayer.TextFileAccess.Write">
+	<summary>
+ Writes All Contents To The Text File.
+ </summary>
+	<returns>True If Successful, Otherwise False.</returns>
+</member><member name="E:Models.Base.DataValidationBase.ErrorListChanged">
+	<summary>
+ Raised When The Error Count Has Changed.
+ </summary>
+	<param name="HasErrors">Returns A Boolean Value Indicating Whether Or Not The Object Has Data Errors.</param>
+</member><member name="F:Models.Base.DataValidationBase._ValidationErrorsList">
+	<summary>
+ This Dictionary Contains A List Of Our Validation Errors For Each Field/Property In The Object.
+ </summary>
+</member><member name="M:Models.Base.DataValidationBase.AddError(System.String,System.String)">
+	<summary>
+ Adds An Error To The Dictionary.
+ </summary>
+	<param name="columnName">The Name Of The Property That Has The Error.</param>
+	<param name="msg">The Message To Display To The User.</param>
+</member><member name="M:Models.Base.DataValidationBase.RemoveError(System.String)">
+	<summary>
+ Removes A Specific Error From The Dictionary (If One Exists).
+ </summary>
+	<param name="columnname">The Property That No Longer Has The Error.</param>
+</member><member name="P:Models.Base.DataValidationBase.HasErrors">
+	<summary>
+ Returns Whether Or Not The Object Has Errors.
+ </summary>
+	<returns>A Boolean Value Indicating If The Object Has Errors.</returns>
+</member><member name="P:Models.Base.DataValidationBase.IsValid">
+	<summary>
+ Returns Whether Or Not The Object Is Valid.
+ </summary>
+	<returns>A Boolean Value Indicating Whether The Object Is Valid Or Not.</returns>
+</member><member name="P:Models.Base.DataValidationBase.Error">
+	<summary>
+ Returns An Error Message Indicating What Is Wrong With The Object.
+ </summary>
+	<returns>A String Message When There Is A Problem OR NOTHING When No Problem Exists.</returns>
+</member><member name="P:Models.Base.DataValidationBase.Item(System.String)">
+	<summary>
+ Returns the Error Message For The Property With The Given Name.
+ </summary>
+	<param name="columnName">The Property That Has A Data Error.</param>
+	<returns>A String Message When There Is A Problem OR NOTHING When No Problem Exists</returns>
+</member><member name="M:Models.PayPacketModel.#ctor(System.Boolean)">
+	<summary>
+ Pay Packet Constructor.
+ </summary>
+	<param name="isNew">If A New 'Record' Is Being Created, Then Pass True As The Arguement.</param>
+	<remarks></remarks>
+</member><member name="P:Models.PayPacketModel.Index">
+	<summary>
+ Represents The Position Within The Text File For The Beginning Of Each Record.
+ </summary>
+	<remarks>This Will Allow Us To Edit and Delete Records Within Our Text File</remarks>
+</member><member name="P:Models.PayPacketModel.Name">
+	<summary>
+ The Name of The Employee.
+ </summary>
+</member><member name="P:Models.PayPacketModel.Hours">
+	<summary>
+ The Total Number Of Hours Worked By The Employee.
+ </summary>
+</member><member name="P:Models.PayPacketModel.Rate">
+	<summary>
+ The Standard Hourly Rate.
+ </summary>
+</member><member name="P:Models.PayPacketModel.IsNew">
+	<summary>
+ Determines If This Is An Insert Rather Than And An Edit.
+ </summary>
+</member><member name="P:Models.PayPacketModel.BasicHours">
+	<summary>
+ The Basic Hours Worked For A Flat Week.
+ </summary>
+</member><member name="P:Models.PayPacketModel.TimeAndHalfHours">
+	<summary>
+ The Hours Worked For Time And A Half.
+ </summary>
+</member><member name="P:Models.PayPacketModel.DoubleTimeHours">
+	<summary>
+ The Hours Worked For Double Time.
+ </summary>
+</member><member name="P:Models.PayPacketModel.BasicEarnings">
+	<summary>
+ Earnings Excluding Any Overtime.
+ </summary>
+</member><member name="P:Models.PayPacketModel.TimeAndHalfEarnings">
+	<summary>
+ Overtime Earnings For Time And A Half (Excluding Double Time).
+ </summary>
+</member><member name="P:Models.PayPacketModel.DoubleTimeEarnings">
+	<summary>
+ Overtime Earnings For Double Time (Excluding Time And A Half)
+ </summary>
+</member><member name="P:Models.PayPacketModel.OvertimeEarnings">
+	<summary>
+ Total Overtime Earnings.
+ </summary>
+</member><member name="P:Models.PayPacketModel.TotalEarnings">
+	<summary>
+ Total Earnings Including Basic Earnings And Any Overtime.
+ </summary>
+</member><member name="M:Models.PayPacketModel.NotifyUI">
+	<summary>
+ Forces The UI To Re-Display (and re-calculate) Overtime Hours And Earnings.
+ </summary>
+	<remarks>Called By Both 'Set' Methods Of The Hours and Rate Properties</remarks>
+</member><member name="T:Models.PayPacketModel.PayPacketBackup">
+	<summary>
+ Structure Used To Make A Copy Of Pay Packet Settings.
+ </summary>
+	<remarks>This Will Allow The End User To Cancel Or Restore An Update (When Using A Form).</remarks>
+</member><member name="F:Models.PayPacketModel.Backup">
+	<summary>
+ Create A New Instance Of The Backup Structure.
+ </summary>
+</member><member name="M:Models.PayPacketModel.BackupClear">
+	<summary>
+ Clear The Contents Of The Backup Structure.
+ </summary>
+</member><member name="M:Models.PayPacketModel.BackupData">
+	<summary>
+ Make A Copy Of Our Pay Packet Object.
+ </summary>
+</member><member name="M:Models.PayPacketModel.BackupRestore">
+	<summary>
+ Restore The Object Back To It's Original State
+ </summary>
+</member><member name="T:Models.PayPacketModel">
+	<summary>
+ Representation Of An Employees Pay Packet
+ </summary>
+	<remarks></remarks>
+</member><member name="P:My.MyWpfExtension.Application">
+	<summary>
+ Returns the application object for the running application
+ </summary>
+</member><member name="P:My.MyWpfExtension.Computer">
+	<summary>
+ Returns information about the host computer.
+ </summary>
+</member><member name="P:My.MyWpfExtension.User">
+	<summary>
+ Returns information for the current user.  If you wish to run the application with the current 
+ Windows user credentials, call My.User.InitializeWithWindowsUser().
+ </summary>
+</member><member name="P:My.MyWpfExtension.Log">
+	<summary>
+ Returns the application log. The listeners can be configured by the application's configuration file.
+ </summary>
+</member><member name="P:My.MyWpfExtension.Windows">
+	<summary>
+ Returns the collection of Windows defined in the project.
+ </summary>
+</member><member name="T:My.MyWpfExtension">
+	<summary>
+ Module used to define the properties that are available in the My Namespace for WPF
+ </summary>
+	<remarks></remarks>
+</member><member name="P:Models.LoginModel.Input_UserName">
+	<summary>
+ Gets / Sets The 'UserName' As Entered By The User On The UI.
+ </summary>
+</member><member name="P:Models.LoginModel.Input_Password">
+	<summary>
+ Gets / Sets The 'Password' As Entered By The User On The UI.
+ </summary>
+</member><member name="P:Models.LoginModel.IsAuthentic">
+	<summary>
+ Determines If The Login Credentials Are Valid.
+ </summary>
+	<returns>TRUE If Valid, Otherwise FALSE</returns>
+</member><member name="M:Models.LoginModel.Authenticate">
+	<summary>
+ Compares The Credentials Entered By The User With Those Stored In Our Configuration File (Case Sensitive).
+ </summary>
+	<returns>TRUE If Both Sets Of Credentials Match, FALSE Otherwise.</returns>
+</member><member name="M:Models.Base.ModelBase.#ctor">
+	<summary>
+Reset the properties so that validation will be executed when the model is initialized.
+ </summary>
+</member><member name="F:Models.Base.ModelBase._IsInEdit">
+	<summary>
+ Gets Or Sets Whether An Object Is Currently Being Edited.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Models.Base.ModelBase.BeginEdit">
+	<summary>
+ Begins The Editing Session.
+ </summary>
+</member><member name="M:Models.Base.ModelBase.CancelEdit">
+	<summary>
+ Cancels The Editing Session.
+ </summary>
+</member><member name="M:Models.Base.ModelBase.EndEdit">
+	<summary>
+ Saves The Data And Ends The Editing Session.
+ </summary>
+	<remarks></remarks>
+</member><member name="F:Models.Base.ModelBase._ModifiedList">
+	<summary>
+ List That Tracks Any Changes In An Object.
+ </summary>
+</member><member name="P:Models.Base.ModelBase.HasModifications">
+	<summary>
+ Determines If ChangesList Has Any Changes.
+ </summary>
+	<value></value>
+	<returns>TRUE If There Are Changes, FALSE If There Are No Changes.</returns>
+</member><member name="M:Models.Base.ModelBase.ModificationAdd(System.String)">
+	<summary>
+ Adds The Name Of A Property To ChangesList If The Property's Value Has Changed.
+ </summary>
+	<param name="propertyName">The Property Name Whose Value HAS Changed</param>
+</member><member name="M:Models.Base.ModelBase.ModificationRemove(System.String)">
+	<summary>
+ Removes The Name Of A Property From ChangesList If The Property's Value Has Not Changed.
+ </summary>
+	<param name="propertyName">The Property Name Whose Value HAS NOT Changed</param>
+</member><member name="M:Models.Base.ModelBase.ModificationsClear">
+	<summary>
+ Clears The ChangesList Of All Objects.
+ </summary>
+</member><member name="M:Models.Base.ModelBase.BackupClear">
+	<summary>
+  Resets The Backup Structure To It's Original State.
+ </summary>
+</member><member name="M:Models.Base.ModelBase.BackupRestore">
+	<summary>
+ Restores Properties From Backup.
+ </summary>
+</member><member name="M:Models.Base.ModelBase.BackupData">
+	<summary>
+ Fills Backup From Properties.
+ </summary>
+</member><member name="F:Application.prview">
+	<summary>
+ Payroll Window Object.
+ </summary>
+</member><member name="F:Application.prviewmodel">
+	<summary>
+ Payroll Window Data Context Object.
+ </summary>
+</member><member name="F:Application.logview">
+	<summary>
+ Login Window Object.
+ </summary>
+</member><member name="F:Application.logviewmodel">
+	<summary>
+ Login Window Data Context Object.
+ </summary>
+</member><member name="F:Application.splashScreen">
+	<summary>
+ Splash Window Object.
+ </summary>
+</member><member name="F:Application.timer">
+	<summary>
+ Timer That Sets The Length Of Time To Display The Splash Screen.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Application.CloseSplash(System.Object,System.EventArgs)">
+	<summary>
+ Extends The 'Application_Startup' Method By Closing The Splash Screen And Opening The Login Window.
+ </summary>
+</member><member name="M:Application.RunLogin">
+	<summary>
+ Opens The Login Window.
+ </summary>
+</member><member name="M:Application.RunPayroll">
+	<summary>
+ Opens The Main Payroll Window.
+ </summary>
+</member><member name="M:Application.Init">
+	<summary>
+ Initialise Global Settings.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Application.TextBox_GotFocus(System.Object,System.EventArgs)">
+	<summary>
+ Automatically Selects 'All' Text Within 'All' Textboxes.
+ </summary>
+</member><member name="M:ViewModels.Base.RelayCommand.#ctor(System.Action)">
+	<summary>
+ Creates A New Command That Can Always Execute.
+ </summary>
+	<param name="pExecute">The Execution Logic.</param>
+</member><member name="M:ViewModels.Base.RelayCommand.#ctor(System.Action,System.Func{System.Boolean})">
+	<summary>
+ Creates A New Command.
+ </summary>
+	<param name="pExecute">The Execution Logic.</param>
+	<param name="pCanExecute">The Execution Status Logic.</param>
+</member><member name="F:Helpers.Events.DoubleClickEventHelper.DoubleClickProperty">
+	<summary>
+ Attached Double Click Dependancy Property.
+ </summary>
+</member><member name="M:Helpers.Events.DoubleClickEventHelper.GetHandleDoubleClick(System.Windows.DependencyObject)">
+	<summary>
+ Get The HandleDoubleClick Property
+ </summary>
+</member><member name="M:Helpers.Events.DoubleClickEventHelper.SetHandleDoubleClick(System.Windows.DependencyObject,System.Boolean)">
+	<summary>
+ Set The HandleDoubleClick Property
+ </summary>
+</member><member name="M:Helpers.Events.DoubleClickEventHelper.OnHandledDoubleClickChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+	<summary>
+ Hooks Up A Weak Event Against A Source's 'MouseDoubleClick'.
+ </summary>
+</member><member name="M:Helpers.Events.DoubleClickEventHelper.OnMouseDoubleClick(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+	<summary>
+ Handles MouseDoubleClick
+ </summary>
+</member><member name="F:Helpers.Events.DoubleClickEventHelper.TheCommandToRunProperty">
+	<summary>
+ The Actual Command To Run.
+ </summary>
+</member><member name="M:Helpers.Events.DoubleClickEventHelper.GetTheCommandToRun(System.Windows.DependencyObject)">
+	<summary>
+ Gets The 'CommandToRunProperty'
+ </summary>
+</member><member name="M:Helpers.Events.DoubleClickEventHelper.SetTheCommandToRun(System.Windows.DependencyObject,System.Windows.Input.ICommand)">
+	<summary>
+ Set The CommandToRunProperty
+ </summary>
+</member><member name="P:My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="F:ViewModels.PayrollViewModel._payrollView">
+	<summary>
+ Handles The 'Navigation' Of Our Payroll Observable Collection.
+ </summary>
+	<remarks></remarks>
+</member><member name="P:ViewModels.PayrollViewModel.paypacketCollection">
+	<summary>
+ Stores A Collection Of PayPacketModel Onjects
+ </summary>
+	<remarks>Tracks Changes To All Objects In The Collection.</remarks>
+</member><member name="P:ViewModels.PayrollViewModel.Count">
+	<summary>
+ Returns The Number Of Pay Packets Currenty In The Payroll Collection.
+ </summary>
+	<returns>An Integer Value Specifying The Number Of Pay Packets.</returns>
+</member><member name="P:ViewModels.PayrollViewModel.CurrentPayPacket">
+	<summary>
+ Returns The Currently Selected Pay Packet Object In Our Observable Collection.
+ </summary>
+</member><member name="P:ViewModels.PayrollViewModel.DataAccess">
+	<summary>
+ An Instance Of Our 'TextFileAccess' Object.
+ </summary>
+	<remarks>The Save / OpenFileDialog Title , Default File Extension and Filter Are Passed As Arguments.</remarks>
+</member><member name="M:ViewModels.PayrollViewModel.Load">
+	<summary>
+ Populates The _payrollCollection Object
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ViewModels.PayrollViewModel.RefreshTotals">
+	<summary>
+ Refreshes Payroll Totals.
+ </summary>
+</member><member name="M:ViewModels.PayrollViewModel.ViewChanged(System.Object,System.EventArgs)">
+	<summary>
+ Handles The CurrentChanged Event Of Our Observable Object View.
+ </summary>
+	<remarks>Used To Trap The Current Pay Packet Object Selected By The User.</remarks>
+</member><member name="P:ViewModels.PayrollViewModel.NewFileCommand">
+	<summary>
+ Provides Command Binding For The View's 'Create File' Control.
+ </summary>
+</member><member name="M:ViewModels.PayrollViewModel.NewFileExecute">
+	<summary>
+ Execution Logic For Creating A New File.
+ </summary>
+</member><member name="P:ViewModels.PayrollViewModel.FileOpenCommand">
+	<summary>
+ Provides Command Binding For This View's 'Open' Control (Button).
+ </summary>
+</member><member name="M:ViewModels.PayrollViewModel.FileOpenExecute">
+	<summary>
+ Calls The File Open Dialog.
+ </summary>
+	<remarks>Execution Logic For File Open Dialog</remarks>
+</member><member name="P:ViewModels.PayrollViewModel.DeleteFileCommand">
+	<summary>
+ Provides Command Binding For The View's 'Delete File' Control.
+ </summary>
+</member><member name="M:ViewModels.PayrollViewModel.DeleteFileExecute">
+	<summary>
+ Execution Logic For Deleting A File.
+ </summary>
+</member><member name="M:ViewModels.PayrollViewModel.CanDeleteFileExecute">
+	<summary>
+ Determines Whether We Can Delete A File Or Not.
+ </summary>
+	<returns>True If We Can, False Otherwise</returns>
+	<remarks>Condition Depends On Whether The File Exists.</remarks>
+</member><member name="P:ViewModels.PayrollViewModel.InsertCommand">
+	<summary>
+  Provides Command Binding For This View's 'Add' Control (Button).
+ </summary>
+</member><member name="M:ViewModels.PayrollViewModel.InsertExecute">
+	<summary>
+ Adds A New Pay Packet.
+ </summary>
+</member><member name="M:ViewModels.PayrollViewModel.CanInsertExecute">
+	<summary>
+ Indicates If Our Data Access Object Is Valid.
+ </summary>
+	<returns>True If Valid, False Otherwise.</returns>
+	<remarks></remarks>
+</member><member name="P:ViewModels.PayrollViewModel.EditCommand">
+	<summary>
+  Provides Command Binding For This View's 'Edit' Control (Button).
+ </summary>
+</member><member name="M:ViewModels.PayrollViewModel.EditExecute">
+	<summary>
+ Opens The 'PayPacketView' Window To Allow Edit Of Pay Packet..
+ </summary>
+	<remarks>Execution Logic For Opening Settings</remarks>
+</member><member name="M:ViewModels.PayrollViewModel.CanEditExecute">
+	<summary>
+ Determines Whether We Can Edit Or Not.
+ </summary>
+	<returns>True If We Can, False Otherwise</returns>
+	<remarks>Condition Depends On  Whether There Are Records Present AND If One Is Actually Selected.</remarks>
+</member><member name="P:ViewModels.PayrollViewModel.DeleteCommand">
+	<summary>
+  Provides Command Binding For This View's 'Delete' Control (Button).
+ </summary>
+</member><member name="M:ViewModels.PayrollViewModel.DeleteExecute">
+	<summary>
+ Deletes The Current Pay Packet Object.
+ </summary>
+</member><member name="M:ViewModels.PayrollViewModel.CanDeleteExecute">
+	<summary>
+ Determines Whether We Can Perform A Delete Or Not.
+ </summary>
+	<returns>True If We Can, False Otherwise</returns>
+	<remarks>Condition Depends On Whether There Are Records Present AND If One Is Actually Selected.</remarks>
+</member><member name="P:ViewModels.PayrollViewModel.SettingsCommand">
+	<summary>
+ Provides Command Binding For This View's 'Settings' Control (Button).
+ </summary>
+</member><member name="M:ViewModels.PayrollViewModel.SettingsExecute">
+	<summary>
+ Opens The Settings View.
+ </summary>
+	<remarks>Execution Logic For Opening Settings</remarks>
+</member><member name="P:ViewModels.SettingsViewModel.WageSettings">
+	<summary>
+ Property Used For Binding Our Wage Settings Data To The View.
+ </summary>
+</member><member name="P:ViewModels.SettingsViewModel.SaveCommand">
+	<summary>
+ Property That Provides Command Binding For The View's 'Save' Button Control.
+ </summary>
+</member><member name="M:ViewModels.SettingsViewModel.SaveExecute">
+	<summary>
+ Saves The Settings.
+ </summary>
+	<remarks>Execution Logic For Saving Settings</remarks>
+</member><member name="M:ViewModels.SettingsViewModel.CanSaveExecute">
+	<summary>
+ Execution Status Logic For Save Command.
+ </summary>
+	<returns>A Boolean Value Indicating Whether Or Not The WageSetting Object Is Valid.</returns>
+	<remarks>If The Object Is Not Valid Then The Save Button Should Disable.</remarks>
+</member><member name="P:ViewModels.SettingsViewModel.CancelCommand">
+	<summary>
+ Property That Provides Command Binding For The View's 'Close' or 'Cancel' Button Control.
+ </summary>
+</member><member name="M:ViewModels.SettingsViewModel.CancelExecute">
+	<summary>
+ Closes The Current View.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ViewModels.SettingsViewModel.CanCloseExecute">
+	<summary>
+ Execution Status Logic For Close Command
+ </summary>
+	<returns>TRUE - Always</returns>
+	<remarks></remarks>
+</member><member name="P:ViewModels.Base.ViewModelBase.currentWindowState">
+	<summary>
+ Gets Or Sets The WindowState Of The Current View.
+ </summary>
+ '''<remarks>By Default This Is WindowState.Normal</remarks>
+</member><member name="P:ViewModels.Base.ViewModelBase.windowTitle">
+	<summary>
+ Provides Binding For Specifying A Windows Title.
+ </summary>
+</member><member name="P:ViewModels.Base.ViewModelBase.windowMaxHeight">
+	<summary>
+ Get / Sets The Maximum Height Of The Current Window
+ </summary>
+	<remarks>By Default This Is SystemParameters.WorkArea.Height + 10</remarks>
+</member><member name="P:ViewModels.Base.ViewModelBase.MinimiseCommand">
+	<summary>
+ Provides ICommand Binding For A View's 'Minimise' Control.
+ </summary>
+</member><member name="M:ViewModels.Base.ViewModelBase.MinimiseExecute">
+	<summary>
+ Execution Logic For Minimising The Current View.
+ </summary>
+</member><member name="P:ViewModels.Base.ViewModelBase.MaximiseCommand">
+	<summary>
+ Provides ICommand Binding For A View's 'Maximise' Control.
+ </summary>
+</member><member name="M:ViewModels.Base.ViewModelBase.MaximiseExecute">
+	<summary>
+ Execution Logic For Maximising The Current View.
+ </summary>
+</member><member name="P:ViewModels.Base.ViewModelBase.NormaliseCommand">
+	<summary>
+ Provides ICommand Binding For A View's 'Restore' Control.
+ </summary>
+</member><member name="M:ViewModels.Base.ViewModelBase.NormaliseExecute">
+	<summary>
+ Execution Logic For Restoring The Current View.
+ </summary>
+</member><member name="P:ViewModels.Base.ViewModelBase.CloseCommand">
+	<summary>
+ Provides ICommand Binding For A View's 'Close' Control.
+ </summary>
+	<remarks>This Is NOT Designed To Shut Down The Application</remarks>
+</member><member name="M:ViewModels.Base.ViewModelBase.Close">
+	<summary>
+ Execution Logic Fot Closing Down The Current Active Window.
+ </summary>
+</member><member name="P:ViewModels.Base.ViewModelBase.ShutdownCommand">
+	<summary>
+ Provides ICommand Binding For A View's 'Close' Control.
+ </summary>
+</member><member name="M:ViewModels.Base.ViewModelBase.ApplicationShutdown">
+	<summary>
+ Execution Logic Fot Shutting Down The Current Application.
+ </summary>
+</member><member name="M:ViewModels.Base.ViewModelBase.DragWindow(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+	<summary>
+ Allows A Window To Be Dragged Across The Screen.
+ </summary>
+	<param name="sender">The Current Window</param>
+	<param name="e"></param>
+</member><member name="M:ViewModels.Base.ViewModelBase.CurrentWindow">
+	<summary>
+ Returns The Current 'Active' Window.
+ </summary>
+</member><member name="F:ViewModels.PayPacketViewModel._dataAccess">
+	<summary>
+ An Instance Of Our 'TextFileAccess' Object.
+ </summary>
+</member><member name="P:ViewModels.PayPacketViewModel.payPacket">
+	<summary>
+ Pay Packet Object Reference.
+ </summary>
+</member><member name="P:ViewModels.PayPacketViewModel.WasSuccessful">
+	<summary>
+ Indicates If The Record Was Successfully Saved.
+ </summary>
+	<returns>True If Successful, False Otherwise.</returns>
+</member><member name="M:ViewModels.PayPacketViewModel.#ctor(Models.PayPacketModel@,DataAccessLayer.TextFileAccess@)">
+	<summary>
+ Pay Packet Object Constructor.
+ </summary>
+	<param name="_payPack">The Pay Packet Object To Edit</param>
+	<param name="dataAccess">The Data Access Object For Persisting Our Changes.</param>
+	<remarks></remarks>
+</member><member name="P:ViewModels.PayPacketViewModel.SaveCommand">
+	<summary>
+ Property That Provides Command Binding For The View's 'Save' Button Control.
+ </summary>
+</member><member name="M:ViewModels.PayPacketViewModel.SaveExecute">
+	<summary>
+ Saves The Pay Packet.
+ </summary>
+	<remarks>Execution Logic For Saving Settings</remarks>
+</member><member name="M:ViewModels.PayPacketViewModel.CanSaveExecute">
+	<summary>
+ Execution Status Logic For Save Command.
+ </summary>
+	<returns>A Boolean Value Indicating Whether Or Not The Pay Packet Object Is Valid.</returns>
+	<remarks>If The Object Is Not Valid Then The Save Button Should Disable.</remarks>
+</member><member name="P:ViewModels.PayPacketViewModel.CancelCommand">
+	<summary>
+ Property That Provides Command Binding For The View's 'Close' or 'Cancel' Button Control.
+ </summary>
+</member><member name="M:ViewModels.PayPacketViewModel.CancelExecute">
+	<summary>
+ Closes The Current View.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:ViewModels.PayPacketViewModel.CanCancelExecute">
+	<summary>
+ Execution Status Logic For Close Command
+ </summary>
+	<returns>TRUE - Always</returns>
+	<remarks></remarks>
+</member><member name="M:Models.Base.DataNotificationBase.ReportPropertyChanged(System.String)">
+	<summary>
+ Raises This Objects PropertyChanged Event.
+ </summary>
+	<param name="propertyname">The Name Of The Property Whose Value Has Changed.</param>
+</member><member name="E:Models.Base.DataNotificationBase.PropertyChanged">
+	<summary>
+ Raised When A Property On This Object Has A New Value.
+ </summary>
+</member><member name="M:Models.Base.DataNotificationBase.VerifyPropertyName(System.String)">
+	<summary>
+ Warns The Developer If This Object Does Not Have A Public Property With The Specified Name.
+ This Method Does Not Exist In A Release Build.
+ </summary>
+</member><member name="F:Models.Base.DataNotificationBase._ThrowOnInvalidPropertyName">
+	<summary>
+ Returns Whether An Exception Is Thrown, or If A DEBUG.Fail() Is Used
+ When An Invalid Property Name Is Passed To The VerifyPropertyName Method.
+ The Default Value Is FALSE, But Sub-Classes Can Override This.
+ </summary>
+</member>
+</members>
+</doc>
