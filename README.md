@@ -1,17 +1,23 @@
 # Payroll
-
+---
 Please read the README.DOCX file for a detailed explanation.
+---
 
-###Technologies###
-* VB.NET
-* XAML
-* Linq (to objects)
-* Random File Access
-* Visual Studio 2010/2015
+####Techs
+|Tech|
+|----|
+| VB.NET|
+| XAML|
+| Linq |
+| Random File Access |
 
-###Code Features###
-* Data Binding / Validation
-* Command Binding / Relay Commands
-* Templates/Styles/Brushes with template binding
-* Dependency / Attached Properties & Implementation of INotifyPropertyChanged
-* MVVM Pattern
+---
+
+#### Features
+|Feature|
+|-------|
+|Data Binding / Validation|
+|Command Binding / Relay Commands|
+|Templates/Styles/Brushes with template binding|
+|Dependency / Attached Properties & Implementation of INotifyPropertyChanged|
+|MVVM Pattern|
